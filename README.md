@@ -4,7 +4,7 @@ A collection of best practises for the on-premises data gateway used by the Powe
 ## What is the Gateway?
 The on-premises data gateway acts as a bridge to provide quick and secure data transfer between on-premises data (data that isn't in the cloud) and several Microsoft cloud services. These cloud services include Power BI, Power Apps, Power Automate, Azure Analysis Services, and Azure Logic Apps. By using a gateway, organizations can keep databases and other data sources on their on-premises networks, yet securely use that on-premises data in cloud services. **The same on-premises data gateway can be used for all services.** 
 
-![Gateway used by different services](images/Picture1.PNG)
+![Gateway used by different services](images/Picture1.png)
 
 In this document we will focus on the best practises for the on-premises data gateway. We focus on highlighting these pratices for the Power Platform and Power BI. More information on how the on-premises data gateway works, check out the documentation for the different services:
 * [Gernal Content](https://docs.microsoft.com/en-us/data-integration/gateway/service-gateway-onprem)
@@ -37,7 +37,7 @@ A on-premises data gateway is however **not necessary** to access:
 ### What is the best way to combine data from the cloud and data that requires an on-premises data gateway?
 If you are using dataflows and are using both cloud data sources and data sources that require an on-premises data gateway, it is recommended to first create a seperate dataflow to load data from on-prem into the cloud (into a Data Lake thorugh analytical dataflows). For more information, look at these [best practises for re-using dataflows](https://docs.microsoft.com/en-us/power-query/dataflows/best-practices-reusing-dataflows). Now, when you want to join the dataflow with the cloud data source, the join will happen in the cloud and not on the gateway. This can help with taking off load of the gateway. 
 
-![Gateway used by different services](images/Picture2.PNG)
+![Gateway used by different services](images/Picture2.png)
 
 ### What types of queries exist in every application?
 Across the products, there are different query types. Understanding different query types and their performance inmpact is useful for choosing the right gateway machin and while monitoring performance od the gateway. Types of queries supported by product:
