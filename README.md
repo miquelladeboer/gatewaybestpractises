@@ -2,7 +2,7 @@
 A collection of best practises for the on-premises data gateway used by the Power Platform and Power BI
 
 ## What is the Gateway?
-The on-premises data gateway acts as a bridge to provide quick and secure data transfer between on-premises data (data that isn't in the cloud) and several Microsoft cloud services. These cloud services include Power BI, Power Apps, Power Automate, Azure Analysis Services, and Azure Logic Apps. By using a gateway, organizations can keep databases and other data sources on their on-premises networks, yet securely use that on-premises data in cloud services. **The same on-premises data gateway can be used for all services.** 
+The on-premises data gateway acts as a bridge to provide quick and secure data transfer between on-premises data (data that isn't in the cloud) and several Microsoft cloud services. These cloud services include Power BI, Power Apps, Power Automate, Azure Analysis Services, and Azure Logic Apps. By using a gateway, organizations can keep databases and other data sources on their on-premises networks, yet securely use that on-premises data in cloud services. **The same on-premises data gateway can be used for all services.**
 
 ![Gateway used by different services](images/Picture1.png)
 
