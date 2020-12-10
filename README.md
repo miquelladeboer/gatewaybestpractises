@@ -60,6 +60,9 @@ At tenant level, the adminstator can control who can install gateways. allowing 
 
 *Note: If you are usin R or Python scripts in ypur data preperation step in Power Query and you want to publish uour report to the cloud, you can only make use of the personal gateway.*
 
+# Why do I need a personal gateway when using Python or R scripts?
+This is because of the security risks of running R and python scripts on a shared platform.
+
 ### When do I need the standard gateway?
 In all other applications, you can only install the standard gateway. Some Advantages/capabilities from the standard gateway are: 
 
@@ -69,3 +72,31 @@ In all other applications, you can only install the standard gateway. Some Advan
 * Privacy levels per data source can be configured. 
 * Clustering for high availability and disaster recovery possible 
 * Logging for activity and health monitoring 
+
+### Should I use the same gateway cluster with different applications like Power Apps and Power BI?
+With the standard gateway it is possible to attach multiple applciation to the same cluster. However, this is not always optimal.
+Reasons to seperate the clusters:
+* Power BI and Power Apps can have different hardware requirements (CPU or memory optimized)
+* Different security roles in Power BI and Power Automate.
+* Can be easier for trroubleshooting and management
+
+### What is the difference between gateway application, gateway machine and gateway cluster?
+* A **gateway application** is the application which helps woth on-prem onnectivity
+* A **gateway machine** is the machine on which the gateway application is installed
+* A **gateway cluster** is a logical grouping of gateway machines
+
+![Gateway used by different services](images/gateway.PNG)
+
+### What are the benifits of high availability and load balancing?
+If you have only one gateway member, then you have a single point of failure. Therefore, we recommenc having a least 2 gateway members on a cluster with high availability enabled. Addinionally enabling load balancing helps utilize recoucres of both gateway members effectively. 
+* **High availability** eliminates having a simple point of failure
+* **Load balancing** automatically distributes the workload across all gateway members in the cluster
+
+## Should I use different clusters for dev/test and prid environmentd>
+We would recommend using at least two separate clusters:
+* 1 cluster for your dev/test environmtent
+* 1 cluster for your prod environment
+
+By doing this, anay changes that uou make, like adding a new data source, you can first test on your dev/test cluster before appying it in your production entironment. This will ensure that you production environmentnis not impacted by these changes.
+
+![Gateway used by different services](images/picture4.png)
